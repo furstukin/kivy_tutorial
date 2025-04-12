@@ -1,0 +1,53 @@
+#: import BgBoxLayout Custom_Layouts
+#: import RoundedButton Custom_Widgets
+Interface:
+    orientation:'vertical'
+    padding:[20,20,20,20]
+    spacing:20
+    hex_code:"#5214FF"
+    alpha:0.7
+    BgBoxLayout:
+        orientation:'vertical'
+        hex_code:"#5214FF"
+        alpha:0.7
+        padding:[20,20,20,20]
+        spacing:20
+        size_hint:(1,0.5)
+        Button:
+            id:btn
+            text:'Submit'
+            size_hint:(0.5,0.15)
+            pos_hint:{'center_x':0.5, 'center_y':0.35}
+        Button:
+            id:btn2
+            text:'Reset'
+            size_hint:(0.5,0.15)
+            pos_hint:{'center_x':0.5, 'center_y':0.35}
+        Button:
+            id:btn3
+            text:'Exit'
+            size_hint:(0.5,0.15)
+            pos_hint:{'center_x':0.5, 'center_y':0.35}
+    BgBoxLayout:
+        hex_code:"#5214FF"
+        alpha:0.7
+        padding:[20,20,20,20]
+        spacing:20
+        size_hint:(1,0.3)
+        Button:
+            id:btn4
+            text:'Submit'
+            size_hint:(0.5,0.5)
+            pos_hint:{'center_x':0.5, 'center_y':0.35}
+        RoundedButton:
+            id:btn5
+            text:'Reset'
+            size_hint:(0.5,0.5)
+            pos_hint:{'center_x':0.5, 'center_y':0.35}
+            hex_code: "#0FFF00"
+    BgBoxLayout:
+        hex_code:"#5214FF"
+        alpha:0.7
+        padding:[20,20,20,20]
+        spacing:20
+        size_hint:(1,0.2)

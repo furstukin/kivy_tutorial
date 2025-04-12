@@ -1,0 +1,45 @@
+Interface:
+    Label:
+        text: "[color=#ffbf00][b]Hello[/b][/color] [i]World![/i]"
+        color: 0.5,0.5,1,1
+        font_size: "32sp"
+        markup:True
+        size_hint: 0.25,0.15
+        pos: root.width*0.5-100,root.height*0.5
+    Button:
+        text: "[color=#ffbf00][b]Hello[/b][/color] [i]World![/i]"
+        color: 0,0,0.75,1
+        font_size: "32sp"
+        markup:True
+        size_hint: 0.25,0.15
+        background_color: 0.5,0.5,1,1
+        background_normal: ''
+        background_down: 'PongBallImage.png'
+        pos: 100,0
+        on_press: root.print_press_msg()
+        #on_press: app.print_msg()
+        on_release: root.print_release_msg()
+    Button:
+        text: "[color=#ffbf00][b]Hello[/b][/color] [i]World![/i]"
+        color: 0,0,0.5,1
+        font_size: "32sp"
+        markup:True
+        size_hint: None,None
+        size:200,100
+        background_color: 0.5,0.5,1,1
+        background_normal: ''
+        disabled: True
+        background_disabled_normal: 'PongBallImage.png'
+        background_disabled_down: '0,0,0,1'
+        pos: 500,0
+        on_press: root.print_msg()
+    TextInput:
+        hint_text: 'Enter your name'
+        font_size: "32sp"
+        size_hint: 0.5,None
+        height: 50
+        #pos: root.width*0.5-200,root.height*0.75
+        pos_hint: {'center_x': 0.5, 'center_y': 0.75}
+        multiline: False
+        on_text_validate: root.print_submit_msg()
+        on_focus: root.print_focus_msg()

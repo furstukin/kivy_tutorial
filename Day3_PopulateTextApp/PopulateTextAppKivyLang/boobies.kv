@@ -1,0 +1,22 @@
+Interface:
+    Button:
+        id:btn
+        text:'Submit'
+        size_hint:(0.5,0.1)
+        pos_hint:{'center_x':0.5, 'center_y':0.35}
+        on_press: root.display_info()
+    Label:
+        id:label
+        font_size:"32sp"
+        text:''
+        size_hint:(0.5, 0.1)
+        pos_hint:{'center_x': 0.5, 'center_y': 0.85}
+        font_name : "seguiemj"
+    TextInput:
+        id:text_input
+        hint_text:"Enter the secret word!"
+        font_size:"32sp"
+        size_hint:(0.5, 0.1)
+        pos_hint:{'center_x': 0.5, 'center_y': 0.5}
+        multiline:False
+        on_text_validate:root.display_info()
