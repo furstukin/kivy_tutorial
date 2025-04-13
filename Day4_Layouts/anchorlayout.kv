@@ -1,0 +1,63 @@
+#: import BgAnchorLayout Custom_Layouts
+#: import BgBoxLayout Custom_Layouts
+#: import RoundedButton Custom_Widgets
+Interface2:
+    #orientation:'vertical'
+    hex_code:"#10009B"
+    alpha:0.3
+    padding:[20,20,20,20]
+    spacing:20
+    Interface3:
+
+<Interface3>:
+    orientation:'vertical'
+    hex_code:"#10009B"
+    alpha:0
+    #padding:[20,20,20,20]
+    spacing:20
+    BgBoxLayout:
+        size_hint:(1,0.20)
+        hex_code:"#10009B"
+        alpha:0.3
+        Label:
+            text:'Title'
+    BgBoxLayout:
+        size_hint:(1,0.50)
+        hex_code:"#10009B"
+        alpha:0.3
+    Interface:
+        size_hint:(1,0.30)
+
+<Interface>:
+    hex_code:"#10009B"
+    alpha:0.3
+    anchor_x:'right'
+    anchor_y:'center'
+    padding:[20,20,20,20]
+    spacing:20
+    BgBoxLayout:
+        orientation:'horizontal'
+        padding:[20,20,20,20]
+        spacing:20
+        hex_code:"#10009B"
+        alpha:0
+        size_hint:(None,None)
+        size:self.minimum_size
+        RoundedButton:
+            id:btn
+            text:'Submit'
+            size_hint:(None,None)
+            size:(dp(100),dp(40))
+            hex_code:"#0004FF"
+            alpha:1
+            inner_glow_color:"#BCC4FF"
+            gradient_colors:["#FFFFFF", "#000000"]
+        RoundedButton:
+            id:btn2
+            text:'Reset'
+            size_hint:(None,None)
+            size:(dp(100),dp(40))
+            hex_code:"#FF0208"
+            alpha:1
+            inner_glow_color:"#FF02FF"
+            gradient_colors:["#FFFFFF", "#000000"]

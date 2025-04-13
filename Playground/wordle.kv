@@ -1,0 +1,53 @@
+#: import BgFloatLayout Custom_Layouts
+#: import RoundedButton Custom_Widgets
+#: import LimitedTextInput Custom_Widgets
+Interface:
+    orientation:'vertical'
+    hex_code:"#10009B"
+    alpha:0.5
+    padding:[20,20,20,20]
+    spacing:20
+    Label:
+        id:lbl_word
+        halign:'center'
+        text:"*****"
+        size_hint:(None,None)
+        size:(dp(150),dp(40))
+        pos_hint:{'center_x':0.5, 'center_y':0.70}
+    Label:
+        id:lbl_right
+        halign:'center'
+        text:""
+        size_hint:(None,None)
+        size:(dp(150),dp(40))
+        pos_hint:{'center_x':0.5, 'center_y':0.60}
+    Label:
+        id:lbl_help
+        halign:'center'
+        text:""
+        size_hint:(None,None)
+        size:(dp(150),dp(40))
+        pos_hint:{'center_x':0.5, 'center_y':0.50}
+    LimitedTextInput:
+        id:user_input
+        halign:'center'
+        valign:'middle'
+        text_size:self.size
+        text:""
+        hint_text:"Enter a 5 letter word."
+        size_hint:(None,None)
+        size:(dp(150),dp(40))
+        pos_hint:{'center_x':0.5, 'center_y':0.35}
+        multiline:False
+        on_text_validate:root.display_info()
+    RoundedButton:
+        id:btn
+        text:'Submit'
+        size_hint:(None,None)
+        size:(dp(100),dp(40))
+        pos_hint:{'center_x':0.5, 'center_y':0.20}
+        hex_code:"#0004FF"
+        alpha:1
+        inner_glow_color:"#BCC4FF"
+        gradient_colors:["#FFFFFF", "#000000"]
+        on_press: root.display_info()
