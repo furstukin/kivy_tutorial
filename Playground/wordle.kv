@@ -1,53 +1,294 @@
 #: import BgFloatLayout Custom_Layouts
+#: import BgBoxLayout Custom_Layouts
 #: import RoundedButton Custom_Widgets
 #: import LimitedTextInput Custom_Widgets
 Interface:
     orientation:'vertical'
-    hex_code:"#10009B"
-    alpha:0.5
-    padding:[20,20,20,20]
-    spacing:20
-    Label:
-        id:lbl_word
-        halign:'center'
-        text:"*****"
-        size_hint:(None,None)
-        size:(dp(150),dp(40))
-        pos_hint:{'center_x':0.5, 'center_y':0.70}
-    Label:
-        id:lbl_right
-        halign:'center'
-        text:""
-        size_hint:(None,None)
-        size:(dp(150),dp(40))
-        pos_hint:{'center_x':0.5, 'center_y':0.60}
+    #hex_code:"#75A0FF"
+    #alpha:0.5
+    padding:[10,10,10,10]
+    spacing:10
     Label:
         id:lbl_help
         halign:'center'
+        font_size:'24sp'
         text:""
         size_hint:(None,None)
         size:(dp(150),dp(40))
+        pos_hint:{'center_x':0.5, 'center_y':0.65}
+    BgBoxLayout:
+        orientation:'horizontal'
+        #hex_code:"#10009B"
+        alpha:1
+        spacing:10
+        size_hint:(None,None)
+        size:self.minimum_size
+        pos_hint:{'center_x':0.5, 'center_y':0.60}
+        Label:
+            id:lbl_ans1_1
+            halign:'center'
+            color:(0,0,0,1)
+            font_size:'24sp'
+            text:"*"
+            size_hint:(None,None)
+            size:(dp(25),dp(20))
+        Label:
+            id:lbl_ans1_2
+            halign:'center'
+            color:(0,0,0,1)
+            font_size:'24sp'
+            text:"*"
+            size_hint:(None,None)
+            size:(dp(25),dp(20))
+        Label:
+            id:lbl_ans1_3
+            halign:'center'
+            color:(0,0,0,1)
+            font_size:'24sp'
+            text:"*"
+            size_hint:(None,None)
+            size:(dp(25),dp(20))
+        Label:
+            id:lbl_ans1_4
+            halign:'center'
+            color:(0,0,0,1)
+            font_size:'24sp'
+            text:"*"
+            size_hint:(None,None)
+            size:(dp(25),dp(20))
+        Label:
+            id:lbl_ans1_5
+            halign:'center'
+            color:(0,0,0,1)
+            font_size:'24sp'
+            text:"*"
+            size_hint:(None,None)
+            size:(dp(25),dp(20))
+    BgBoxLayout:
+        orientation:'horizontal'
+        #hex_code:"#10009B"
+        alpha:1
+        spacing:10
+        size_hint:(None,None)
+        size:self.minimum_size
+        pos_hint:{'center_x':0.5, 'center_y':0.55}
+        Label:
+            id:lbl_ans2_1
+            halign:'center'
+            color:(0,0,0,1)
+            font_size:'24sp'
+            text:"*"
+            size_hint:(None,None)
+            size:(dp(25),dp(20))
+        Label:
+            id:lbl_ans2_2
+            halign:'center'
+            color:(0,0,0,1)
+            font_size:'24sp'
+            text:"*"
+            size_hint:(None,None)
+            size:(dp(25),dp(20))
+        Label:
+            id:lbl_ans2_3
+            halign:'center'
+            color:(0,0,0,1)
+            font_size:'24sp'
+            text:"*"
+            size_hint:(None,None)
+            size:(dp(25),dp(20))
+        Label:
+            id:lbl_ans2_4
+            halign:'center'
+            color:(0,0,0,1)
+            font_size:'24sp'
+            text:"*"
+            size_hint:(None,None)
+            size:(dp(25),dp(20))
+        Label:
+            id:lbl_ans2_5
+            halign:'center'
+            color:(0,0,0,1)
+            font_size:'24sp'
+            text:"*"
+            size_hint:(None,None)
+            size:(dp(25),dp(20))
+    BgBoxLayout:
+        orientation:'horizontal'
+        #hex_code:"#10009B"
+        alpha:1
+        spacing:10
+        size_hint:(None,None)
+        size:self.minimum_size
         pos_hint:{'center_x':0.5, 'center_y':0.50}
+        Label:
+            id:lbl_ans3_1
+            halign:'center'
+            color:(0,0,0,1)
+            font_size:'24sp'
+            text:"*"
+            size_hint:(None,None)
+            size:(dp(25),dp(20))
+        Label:
+            id:lbl_ans3_2
+            halign:'center'
+            color:(0,0,0,1)
+            font_size:'24sp'
+            text:"*"
+            size_hint:(None,None)
+            size:(dp(25),dp(20))
+        Label:
+            id:lbl_ans3_3
+            halign:'center'
+            color:(0,0,0,1)
+            font_size:'24sp'
+            text:"*"
+            size_hint:(None,None)
+            size:(dp(25),dp(20))
+        Label:
+            id:lbl_ans3_4
+            halign:'center'
+            color:(0,0,0,1)
+            font_size:'24sp'
+            text:"*"
+            size_hint:(None,None)
+            size:(dp(25),dp(20))
+        Label:
+            id:lbl_ans3_5
+            halign:'center'
+            color:(0,0,0,1)
+            font_size:'24sp'
+            text:"*"
+            size_hint:(None,None)
+            size:(dp(25),dp(20))
+    BgBoxLayout:
+        orientation:'horizontal'
+        #hex_code:"#10009B"
+        alpha:1
+        spacing:10
+        size_hint:(None,None)
+        size:self.minimum_size
+        pos_hint:{'center_x':0.5, 'center_y':0.45}
+        Label:
+            id:lbl_ans4_1
+            halign:'center'
+            color:(0,0,0,1)
+            font_size:'24sp'
+            text:"*"
+            size_hint:(None,None)
+            size:(dp(25),dp(20))
+        Label:
+            id:lbl_ans4_2
+            halign:'center'
+            color:(0,0,0,1)
+            font_size:'24sp'
+            text:"*"
+            size_hint:(None,None)
+            size:(dp(25),dp(20))
+        Label:
+            id:lbl_ans4_3
+            halign:'center'
+            color:(0,0,0,1)
+            font_size:'24sp'
+            text:"*"
+            size_hint:(None,None)
+            size:(dp(25),dp(20))
+        Label:
+            id:lbl_ans4_4
+            halign:'center'
+            color:(0,0,0,1)
+            font_size:'24sp'
+            text:"*"
+            size_hint:(None,None)
+            size:(dp(25),dp(20))
+        Label:
+            id:lbl_ans4_5
+            halign:'center'
+            color:(0,0,0,1)
+            font_size:'24sp'
+            text:"*"
+            size_hint:(None,None)
+            size:(dp(25),dp(20))
+    BgBoxLayout:
+        orientation:'horizontal'
+        #hex_code:"#10009B"
+        alpha:1
+        spacing:10
+        size_hint:(None,None)
+        size:self.minimum_size
+        pos_hint:{'center_x':0.5, 'center_y':0.40}
+        Label:
+            id:lbl_ans5_1
+            halign:'center'
+            color:(0,0,0,1)
+            font_size:'24sp'
+            text:"*"
+            size_hint:(None,None)
+            size:(dp(25),dp(20))
+        Label:
+            id:lbl_ans5_2
+            halign:'center'
+            color:(0,0,0,1)
+            font_size:'24sp'
+            text:"*"
+            size_hint:(None,None)
+            size:(dp(25),dp(20))
+        Label:
+            id:lbl_ans5_3
+            halign:'center'
+            color:(0,0,0,1)
+            font_size:'24sp'
+            text:"*"
+            size_hint:(None,None)
+            size:(dp(25),dp(20))
+        Label:
+            id:lbl_ans5_4
+            halign:'center'
+            color:(0,0,0,1)
+            font_size:'24sp'
+            text:"*"
+            size_hint:(None,None)
+            size:(dp(25),dp(20))
+        Label:
+            id:lbl_ans5_5
+            halign:'center'
+            color:(0,0,0,1)
+            font_size:'24sp'
+            text:"*"
+            size_hint:(None,None)
+            size:(dp(25),dp(20))
+    Label:
+        id:lbl_info
+        halign:'center'
+        text:"Enter a 5 letter word."
+        font_size:'24sp'
+        size_hint:(None,None)
+        size:(dp(150),dp(40))
+        pos_hint:{'center_x':0.5, 'center_y':0.35}
     LimitedTextInput:
         id:user_input
         halign:'center'
         valign:'middle'
+        background_color:(1, 1, 1, 1)  # Set background to white
+        foreground_color:(0, 0, 0, 1)  # Set text color to black for contrast
         text_size:self.size
         text:""
-        hint_text:"Enter a 5 letter word."
+        font_size:'24sp'
         size_hint:(None,None)
-        size:(dp(150),dp(40))
-        pos_hint:{'center_x':0.5, 'center_y':0.35}
+        size:(dp(200),dp(50))
+        pos_hint:{'center_x':0.5, 'center_y':0.25}
         multiline:False
-        on_text_validate:root.display_info()
+        on_text_validate:root.check_response()
+        disabled:True
+        disabled_color:(0.5,0.5,0.5,0.5)
     RoundedButton:
         id:btn
-        text:'Submit'
+        text:'Begin'
+        font_size:'24sp'
         size_hint:(None,None)
-        size:(dp(100),dp(40))
-        pos_hint:{'center_x':0.5, 'center_y':0.20}
+        size:(dp(125),dp(40))
+        pos_hint:{'center_x':0.5, 'center_y':0.15}
         hex_code:"#0004FF"
         alpha:1
         inner_glow_color:"#BCC4FF"
         gradient_colors:["#FFFFFF", "#000000"]
-        on_press: root.display_info()
+        #on_press: root.start_game()

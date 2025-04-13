@@ -127,6 +127,23 @@ class LimitedTextInput(TextInput):
         self.multiline = False
         self.padding_y = [self.height / 3.5, 0]  # Center the text vertically (adjust as needed)
 
+    def update_label_background(self, label_id, rgba_color):
+        # Access the label by its ID
+        label = self.ids[label_id]
+
+        # Add canvas instructions for the background
+        with label.canvas.before:
+            Color(rgba_color[0], rgba_color[1], rgba_color[2], rgba_color[3])  # Set the background color
+            label.bg_rect = Rectangle(size=label.size, pos=label.pos)
+
+        # Bind the label's size and position to update the background rectangle dynamically
+        label.bind(size=self.update_bg_rect, pos=self.update_bg_rect)
+
+    def update_bg_rect(self, instance, value):
+        # Ensure the background rectangle matches the label's size and position
+        instance.bg_rect.size = instance.size
+        instance.bg_rect.pos = instance.pos
+
     def insert_text(self, substring, from_undo=False):
         # Limit input to 5 characters
         if len(self.text) + len(substring) > 5:
@@ -138,16 +155,3 @@ class LimitedTextInput(TextInput):
         self.text_size = self.size
         self.padding_y = [self.height / 3.5, 0]  # Recalculate padding
 
-# class RoundedButtonApp(App):
-#     def build(self):
-#         return RoundedButton(
-#             text="Rounded Button",
-#             size_hint=(0.5, 0.2),
-#             pos_hint={'center_x': 0.5, 'center_y': 0.5},
-#             font_size=24,
-#             hex_code="#5214FF"
-#         )
-#
-#
-# if __name__ == '__main__':
-#     RoundedButtonApp().run()
