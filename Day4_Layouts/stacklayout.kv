@@ -1,0 +1,30 @@
+#: import BgBoxLayout Custom_Layouts
+#: import BgStackLayout Custom_Layouts
+Interface:
+    orientation:'vertical'
+    hex_code:"#75A0FF"
+    alpha:0.5
+    padding:[dp(10),dp(10),dp(10),dp(10)]
+    spacing:dp(10)
+    ScrollView:
+        size_hint:(1,0.9)
+        bar_width:5
+        BgStackLayout:
+            id:stack_layout
+            orientation:'lr-tb'
+            hex_code:"#75A0FF"
+            alpha:0.25
+            size_hint_y:None
+            height:self.minimum_height
+            padding:[dp(20),dp(20),dp(20),dp(20)]
+            spacing:dp(20)
+    BgBoxLayout:
+        size_hint:(1,0.1)
+        Button:
+            text:'Generate Buttons'
+            #size:(dp(150),dp(100))
+            on_press:root.generate_buttons()
+        Button:
+            text:'Clear All Buttons'
+            #size:(dp(150),dp(100))
+            on_press:root.clear_buttons()

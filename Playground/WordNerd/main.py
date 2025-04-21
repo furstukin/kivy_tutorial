@@ -3,8 +3,11 @@ from kivy.app import App
 from kivy.clock import Clock
 from kivy.core.image import Image
 from kivy.graphics import Rectangle, Color
-from Custom_Layouts import BgFloatLayout
-from data import WORDS_5L
+from Custom_Layouts import BgFloatLayout, BgBoxLayout
+from data import WORDS_5L, WORDS_5L_EASY, WORDS_5L_MED
+from kivy.core.window import Window
+
+Window.softinput_mode = "below_target"
 
 TRIES_DICT = {
     '1': ['lbl_ans1_1', 'lbl_ans1_2', 'lbl_ans1_3', 'lbl_ans1_4', 'lbl_ans1_5'],
@@ -28,7 +31,7 @@ class Interface(BgFloatLayout):
 
         # Add background image using canvas instructions
         with self.canvas.before:
-            self.bg_image = Image('../images/word_game_bg.png').texture  # Replace with your image file path
+            self.bg_image = Image('images/word_game_bg.png').texture  # Replace with your image file path
             Rectangle(size=self.size, pos=self.pos, texture=self.bg_image)
 
         # Ensure the background resizes with the layout
@@ -119,7 +122,39 @@ class Interface(BgFloatLayout):
                 main_ids.btn.text = 'Try Again?'
                 main_ids.btn.on_press = self.start_game
 
-class WordleApp(App):
+class Logo(BgBoxLayout):
+    def __init__(self, **kwargs):
+        super().__init__(**kwargs)
+
+        # Bind the background update to resizing events
+        self.bind(size=self.update_bg_image, pos=self.update_bg_image)
+
+    def on_kv_post(self, base_widget):
+        # Ensure the background is properly initialized after the widget is set up
+        Clock.schedule_once(lambda dt: self.setup_bg(), 0)
+
+    def setup_bg(self):
+        with self.canvas.before:
+            Color(1, 1, 1, 1)  # White border
+            self.border_rect = Rectangle(size=(self.size[0] + 4, self.size[1] + 4),
+                                         pos=(self.pos[0] - 2, self.pos[1] - 2))
+
+            self.bg_image = Image('images/logo_bg.png').texture
+            self.bg_rect = Rectangle(size=self.size, pos=self.pos, texture=self.bg_image)
+
+        # Ensure both background and border update on resize
+        self.bind(size=self.update_bg_image, pos=self.update_bg_image)
+
+    def update_bg_image(self, instance, value):
+        if hasattr(self, 'bg_rect') and hasattr(self, 'border_rect'):
+            self.bg_rect.size = self.size
+            self.bg_rect.pos = self.pos
+
+            # Ensure the border resizes with the background
+            self.border_rect.size = (self.size[0] + 4, self.size[1] + 4)
+            self.border_rect.pos = (self.pos[0] - 2, self.pos[1] - 2)
+
+class WordNerdApp(App):
     pass
 
-WordleApp().run()
+WordNerdApp().run()

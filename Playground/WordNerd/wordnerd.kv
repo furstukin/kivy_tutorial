@@ -1,5 +1,6 @@
-#: import BgFloatLayout Custom_Layouts
 #: import BgBoxLayout Custom_Layouts
+#: import BgFloatLayout Custom_Layouts
+#: import BgGridLayout Custom_Layouts
 #: import RoundedButton Custom_Widgets
 #: import LimitedTextInput Custom_Widgets
 Interface:
@@ -8,32 +9,27 @@ Interface:
     #alpha:0.5
     padding:[10,10,10,10]
     spacing:10
-    Label:
-        id:title_lbl
-        halign:'center'
-        markup:True
-        font_name: "../fonts/PermanentMarker-Regular.ttf"  # Replace with your chosen font
-        font_size:'48sp'
-        text:"[color=#000080][b]Word Nerd[/b][/color]"
-        size_hint:(None,None)
-        size:(dp(3000),dp(40))
-        pos_hint:{'center_x':0.5, 'center_y':0.80}
+    Logo:
     Label:
         id:lbl_help
+        text_size: self.width, None
+        size_hint_y: None
+        height: self.texture_size[1]
         halign:'center'
         font_size:'24sp'
         text:""
         size_hint:(None,None)
-        size:(dp(150),dp(40))
+        size:(dp(400),dp(40))
         pos_hint:{'center_x':0.5, 'center_y':0.65}
-    BgBoxLayout:
-        orientation:'horizontal'
+    BgGridLayout:
+        cols:5
+        orientation:'lr-tb'
         #hex_code:"#10009B"
         alpha:1
         spacing:10
         size_hint:(None,None)
         size:self.minimum_size
-        pos_hint:{'center_x':0.5, 'center_y':0.60}
+        pos_hint:{'center_x':0.5, 'center_y':0.50}
         Label:
             id:lbl_ans1_1
             halign:'center'
@@ -74,14 +70,6 @@ Interface:
             text:"-"
             size_hint:(None,None)
             size:(dp(25),dp(20))
-    BgBoxLayout:
-        orientation:'horizontal'
-        #hex_code:"#10009B"
-        alpha:1
-        spacing:10
-        size_hint:(None,None)
-        size:self.minimum_size
-        pos_hint:{'center_x':0.5, 'center_y':0.55}
         Label:
             id:lbl_ans2_1
             halign:'center'
@@ -122,14 +110,6 @@ Interface:
             text:"-"
             size_hint:(None,None)
             size:(dp(25),dp(20))
-    BgBoxLayout:
-        orientation:'horizontal'
-        #hex_code:"#10009B"
-        alpha:1
-        spacing:10
-        size_hint:(None,None)
-        size:self.minimum_size
-        pos_hint:{'center_x':0.5, 'center_y':0.50}
         Label:
             id:lbl_ans3_1
             halign:'center'
@@ -170,14 +150,6 @@ Interface:
             text:"-"
             size_hint:(None,None)
             size:(dp(25),dp(20))
-    BgBoxLayout:
-        orientation:'horizontal'
-        #hex_code:"#10009B"
-        alpha:1
-        spacing:10
-        size_hint:(None,None)
-        size:self.minimum_size
-        pos_hint:{'center_x':0.5, 'center_y':0.45}
         Label:
             id:lbl_ans4_1
             halign:'center'
@@ -218,14 +190,6 @@ Interface:
             text:"-"
             size_hint:(None,None)
             size:(dp(25),dp(20))
-    BgBoxLayout:
-        orientation:'horizontal'
-        #hex_code:"#10009B"
-        alpha:1
-        spacing:10
-        size_hint:(None,None)
-        size:self.minimum_size
-        pos_hint:{'center_x':0.5, 'center_y':0.40}
         Label:
             id:lbl_ans5_1
             halign:'center'
@@ -302,3 +266,19 @@ Interface:
         inner_glow_color:"#BCC4FF"
         gradient_colors:["#FFFFFF", "#000000"]
         #on_press: root.start_game()
+<Logo>:
+    hex_code:"#ffffff"
+    alpha:0.5
+    padding:[10,10,10,10]
+    spacing:10
+    size_hint:(0.35,0.075)
+    pos_hint:{'center_x':0.5, 'center_y':0.80}
+    Label:
+        id:title_lbl
+        halign:'center'
+        markup:True
+        font_name: "fonts/PermanentMarker-Regular.ttf"
+        font_size:'48sp'
+        text:"[color=#000080][b]Word Nerd[/b][/color]"
+        #size_hint:(None,None)
+        size:(dp(3000),dp(40))
