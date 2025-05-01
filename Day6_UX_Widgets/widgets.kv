@@ -1,0 +1,48 @@
+Interface:
+    AnchorLayout:
+        BoxLayout:
+            orientation:"vertical"
+            size_hint:(None, None)
+            size:self.minimum_size
+            BoxLayout:
+                orientation:"horizontal"
+                size_hint:(None, None)
+                size:self.minimum_size
+                CheckBox:
+                    size_hint:(None,None)
+                    size:(dp(20), dp(20))
+                    group: "option"
+                    on_active:root.checking(self, label1)
+                Label:
+                    id:label1
+                    text:"Option 1"
+                    size_hint:(None,None)
+                    size:(dp(60), dp(20))
+            BoxLayout:
+                orientation:"horizontal"
+                size_hint:(None, None)
+                size:self.minimum_size
+                CheckBox:
+                    size_hint:(None,None)
+                    size:(dp(20), dp(20))
+                    group: "option"
+                    on_active:root.checking(self, label2)
+                Label:
+                    id:label2
+                    text:"Option 2"
+                    size_hint:(None,None)
+                    size:(dp(60), dp(20))
+            BoxLayout:
+                orientation:"horizontal"
+                size_hint:(None, None)
+                size:self.minimum_size
+                CheckBox:
+                    size_hint:(None,None)
+                    size:(dp(20), dp(20))
+                    group: "option"
+                    on_active:root.checking(self, label3)
+                Label:
+                    id:label3
+                    text:"Option 3"
+                    size_hint:(None,None)
+                    size:(dp(60), dp(20))

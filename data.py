@@ -18,3 +18,4 @@ WORDS_5L_EASY = ['ABOUT', 'ALERT', 'ARGUE', 'BEACH', 'ABOVE', 'ALIKE', 'ARISE', 
 # five_letter_words = [word.lower() for word in word_list if len(word) == 5]
 #
 # print(five_letter_words)
+

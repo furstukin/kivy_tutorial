@@ -17,8 +17,9 @@ TRIES_DICT = {
     '5': ['lbl_ans5_1', 'lbl_ans5_2', 'lbl_ans5_3', 'lbl_ans5_4', 'lbl_ans5_5']
 }
 
-def get_word():
-    my_word = random.choice(WORDS_5L)
+
+def get_word(w_list):
+    my_word = random.choice(w_list)
     print(my_word)
     return my_word
 
@@ -28,6 +29,8 @@ class Interface(BgFloatLayout):
         super().__init__(**kwargs)
         self.word = ''
         self.tries = 0
+        self.guesses = []
+        self.word_list = []
 
         # Add background image using canvas instructions
         with self.canvas.before:
@@ -64,8 +67,10 @@ class Interface(BgFloatLayout):
         instance.bg_rect.pos = instance.pos
 
     def start_game(self):
-        self.word = get_word()
+        self.word_list = WORDS_5L
+        self.word = get_word(self.word_list)
         self.tries = 0
+        self.guesses = []
         main_ids = self.ids
         for row in range(1,6):
             for label in TRIES_DICT[str(row)]:
@@ -74,6 +79,7 @@ class Interface(BgFloatLayout):
         main_ids.btn.text = 'Submit'
         main_ids.btn.on_press = self.check_response
         main_ids.user_input.disabled = False
+        # Add a section to select word difficulty
         Clock.schedule_once(lambda dt: setattr(main_ids.user_input, 'focus', True), 0.25)
 
     def check_response(self):
@@ -83,12 +89,18 @@ class Interface(BgFloatLayout):
         if len(response) < 5:
             main_ids.lbl_help.text = 'Must be a 5 letter word.'
             return
-
-        #Check if response is a real 5 letter word
+        #Check if response is a real 5 letter word and reset focus to input
         elif response not in WORDS_5L:
             main_ids.lbl_help.text = "Don't test me friend! That's not a real word."
+            Clock.schedule_once(lambda dt: setattr(main_ids.user_input, 'focus', True), 0)
+            return
+        #Check if word was already guessed and reset focus to input
+        elif response in self.guesses:
+            main_ids.lbl_help.text = "Really? You already tried that one."
+            Clock.schedule_once(lambda dt: setattr(main_ids.user_input, 'focus', True), 0)
             return
         else:
+            self.guesses.append(response)
             self.tries += 1
             place_holder = list(self.word)
             cur_char = 0
